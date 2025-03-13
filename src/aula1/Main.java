@@ -12,8 +12,8 @@ public class Main {
         // objeto organização
         Organizacao organizacao = new Organizacao();
 
-        Aluno aluno01 = new Aluno("Carlos", "101010");
-        Aluno aluno02 = new Aluno("Ana", "101222");
+        Aluno aluno01 = new Aluno("Carlos André", "100020", "carlos.andre", "senha123", "Turma A");
+        Aluno aluno02 = new Aluno("Maria Clara", "100021", "maria.clara", "senha456", "Turma B");
 
         ArrayList<Aluno> alunos = new ArrayList<>();
         alunos.add(aluno01);

@@ -1,40 +1,27 @@
 package aula1.entity;
 
 public class Aluno extends Usuario{
-    private String nome;
-    private String matricula;
+    private String turma;
 
-    //CONSTRUTOR VAZIO
     public Aluno() {
+
     }
 
-    //CONSTRUTOR PARAMETRIZADO
-    public Aluno(String nome, String matricula) {
-        this.nome = nome;
-        this.matricula = matricula;
+    public Aluno(String nome, String matricula, String login, String senha, String turma) {
+        super(nome, matricula, login, senha);
+        this.turma = turma;
     }
 
-    // GET E SET
-    public String getNome() {
-        return nome;
+    public String getTurma() {
+        return turma;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setTurma(String turma) {
+        this.turma = turma;
     }
 
-    public String getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
-    }
-
-    //metodo relatorio INDIVIDUAL do aluno (do objeto auluno
-
-    public String exibirDetalhes(){
-        return String.format("Nome do aluno: %s\nMatricula do aluno: %s", nome, matricula);
-
+    @Override
+    public String toString() {
+        return String.format("%s - Turma: %s", super.toString(), turma);
     }
 }

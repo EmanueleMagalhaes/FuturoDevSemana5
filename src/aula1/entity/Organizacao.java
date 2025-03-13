@@ -1,11 +1,14 @@
 package aula1.entity;
 
+import aula1.Interface.Pagamento;
+
 import java.util.ArrayList;
 
-public class Organizacao {
+public class Organizacao implements Pagamento {
 // atributo
     private String nome;
     private ArrayList<Aluno> alunos;
+    private ArrayList<Professor> professores;
 
 
 
@@ -15,13 +18,15 @@ public class Organizacao {
 
     // construtor parametrizado
 
-    public Organizacao(String nome, ArrayList<Aluno> alunos) {
+    public Organizacao(String nome, ArrayList<Aluno> alunos, ArrayList<Professor> professors) {
         this.nome = nome;
         this.alunos = alunos;
+        this.professores = professores;
     }
 
     // get e Set (para fazer o encapisulamento)
     public String getNome() {
+
         return nome;
     }
 
@@ -41,9 +46,14 @@ public class Organizacao {
     public String relatorioAlunos(){
         String resultado = "";
         for(Aluno aluno : alunos){
-            resultado += aluno.exibirDetalhes() + "\n";
+            resultado += aluno.toString() + "\n";
         }
         return resultado;
+    }
+
+    @Override
+    public String realizarPagamento() {
+        return "Pagamento efetuado com sucesso!";
     }
 
 }
